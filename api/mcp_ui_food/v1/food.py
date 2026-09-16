@@ -5,6 +5,7 @@ from reboot.api import (
     Methods,
     Model,
     Reader,
+    Shared,
     Tool,
     Transaction,
     Type,
@@ -80,6 +81,7 @@ api = API(
         state=UserState,
         methods=Methods(
             start_order=Transaction(
+                mode=Shared(),
                 request=None,
                 response=StartOrderResponse,
                 description="Start a new food order with a "
